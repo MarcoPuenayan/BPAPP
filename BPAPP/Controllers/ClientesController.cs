@@ -28,6 +28,10 @@ namespace BPAPP.Controllers
 
         #region : Metodos
 
+        /// <summary>
+        /// Listado de Clientes
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public async Task<ActionResult<StatusViewModel>> GetClientes()
         {
@@ -49,6 +53,11 @@ namespace BPAPP.Controllers
             }
         }
 
+        /// <summary>
+        /// Detalle de Cliente
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet("{id}")]
         public async Task<ActionResult<StatusViewModel>> GetCliente(Guid id)
         {
@@ -70,6 +79,11 @@ namespace BPAPP.Controllers
             }
         }
 
+        /// <summary>
+        /// Registro de Cliente
+        /// </summary>
+        /// <param name="cliente"></param>
+        /// <returns></returns>
         [HttpPost]
         public async Task<ActionResult<StatusViewModel>> PostClientes([FromBody] ClienteViewModel cliente)
         {
@@ -94,6 +108,12 @@ namespace BPAPP.Controllers
             }
         }
 
+        /// <summary>
+        /// Actualizacion de datos del cliente
+        /// </summary>
+        /// <param name="cliente"></param>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpPut("{id}")]
         public async Task<ActionResult<StatusViewModel>> PutClientes([FromBody] ClienteViewModel cliente, Guid id)
         {
@@ -115,6 +135,11 @@ namespace BPAPP.Controllers
             }
         }
 
+        /// <summary>
+        /// Inactivar a Clientes
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpDelete("{id}")]
         public async Task<ActionResult<StatusViewModel>> DeleteClientes(Guid id)
         {

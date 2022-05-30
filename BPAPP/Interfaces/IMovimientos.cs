@@ -15,8 +15,18 @@ namespace BPAPP.Interfaces
 
         public Task<Movimiento> DeleteMovimiento(Guid id);
 
+        /// <summary>
+        /// Validaciones de Movimientos de cuenta
+        /// </summary>
+        /// <param name="movimiento"></param>
+        /// <returns></returns>
         public Task<StatusViewModel> ValidacaionesMovimiento(MovimientoViewModel movimiento);
 
+        /// <summary>
+        ///  reporte de movimientos por cliente y rango de fechas
+        /// </summary>
+        /// <param name="movimiento"></param>
+        /// <returns></returns>
         public Task<StatusViewModel> GetReporteMovimientos(ReporteMovimientosViewModel movimiento);
     }
 }

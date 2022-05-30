@@ -15,6 +15,11 @@ namespace BPAPP.Interfaces
 
         public Task<Cliente> DeleteClientes(Guid id);
 
+        /// <summary>
+        /// Verificar si existe cliente
+        /// </summary>
+        /// <param name="cliente"></param>
+        /// <returns></returns>
         public Task<StatusViewModel> ExistCliente(ClienteViewModel cliente);
     }
 }

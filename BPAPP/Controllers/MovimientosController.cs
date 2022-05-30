@@ -28,6 +28,10 @@ namespace BPAPP.Controllers
 
         #region : Metodos
 
+        /// <summary>
+        /// Listado de movimientos
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public async Task<ActionResult<StatusViewModel>> GetMovimiento()
         {
@@ -49,6 +53,11 @@ namespace BPAPP.Controllers
             }
         }
 
+        /// <summary>
+        /// Reporte de Movimientos por cliente
+        /// </summary>
+        /// <param name="reporte"></param>
+        /// <returns></returns>
         [HttpGet("reporte")]
         public async Task<ActionResult<StatusViewModel>> GetReporte([FromQuery] ReporteMovimientosViewModel reporte)
         {
@@ -66,6 +75,7 @@ namespace BPAPP.Controllers
                 return status;
             }
         }
+
         /// <summary>
         /// Registro de movimientos de cuentas
         /// </summary>
@@ -97,6 +107,12 @@ namespace BPAPP.Controllers
             }
         }
 
+        /// <summary>
+        /// Actualizacion de movimientos
+        /// </summary>
+        /// <param name="cliente"></param>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpPut("{id}")]
         public async Task<ActionResult<StatusViewModel>> PutMovimiento([FromBody] ClienteViewModel cliente, Guid id)
         {
@@ -118,6 +134,11 @@ namespace BPAPP.Controllers
             }
         }
 
+        /// <summary>
+        /// Eliminacion de MOviminietos
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpDelete("{id}")]
         public async Task<ActionResult<StatusViewModel>> DeleteMovimiento(Guid id)
         {

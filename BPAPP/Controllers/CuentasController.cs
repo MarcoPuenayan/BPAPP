@@ -28,6 +28,10 @@ namespace BPAPP.Controllers
 
         #region : Metodos
 
+        /// <summary>
+        /// Listado de Cuentas
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public async Task<ActionResult<StatusViewModel>> GetCuentas()
         {
@@ -49,6 +53,11 @@ namespace BPAPP.Controllers
             }
         }
 
+        /// <summary>
+        /// Detalle de cuentas
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet("{id}")]
         public async Task<ActionResult<StatusViewModel>> GetCuenta(Guid id)
         {
@@ -70,6 +79,11 @@ namespace BPAPP.Controllers
             }
         }
 
+        /// <summary>
+        /// Registro de cuentas
+        /// </summary>
+        /// <param name="cuenta"></param>
+        /// <returns></returns>
         [HttpPost]
         public async Task<ActionResult<StatusViewModel>> PostCuenta([FromBody] CuentaViewModel cuenta)
         {
@@ -94,6 +108,12 @@ namespace BPAPP.Controllers
             }
         }
 
+        /// <summary>
+        /// Actualizacion de datos de cuenta
+        /// </summary>
+        /// <param name="cuenta"></param>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpPut("{id}")]
         public async Task<ActionResult<StatusViewModel>> PutCuenta([FromBody] CuentaViewModel cuenta, Guid id)
         {
@@ -115,6 +135,11 @@ namespace BPAPP.Controllers
             }
         }
 
+        /// <summary>
+        /// Inactivacion de cuenta
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpDelete("{id}")]
         public async Task<ActionResult<StatusViewModel>> DeleteCuenta(Guid id)
         {
